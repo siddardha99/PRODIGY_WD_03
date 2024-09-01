@@ -1,0 +1,92 @@
+
+body {
+    font-family: 'VT323', monospace; /* Unique retro-style font */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #000; /* Background set to black */
+    color: white;
+}
+
+.game-container {
+    text-align: center;
+    background: #1e1e1e; /* Dark background for the game container */
+    padding: 20px;
+    border-radius: 20px; /* Rounded game container */
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 3em;
+    color: #ff03d1; /* Neon green title */
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+    gap: 15px; /* Increased gap for a unique look */
+    margin-bottom: 30px;
+}
+
+.cell {
+    background-color: #262626; /* Darker background for cells */
+    border-radius: 50%; /* Circular cells */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em; /* Large font size for X and O */
+    color: #ff4081; /* Bright pink color for X and O */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cell:hover {
+    background-color: #333;
+    transform: rotate(360deg); /* 360-degree rotation on hover */
+}
+
+#game-status {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #f510ed; /* Neon green color for game status */
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Spacing for a more retro feel */
+}
+
+#restart-button {
+    padding: 12px 25px;
+    font-size: 1.2em;
+    color: #000;
+    background-color: #ff4081; /* Bright pink restart button */
+    border: none;
+    border-radius: 20px; /* Rounded restart button */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#restart-button:hover {
+    background-color: #f50057; /* Darker pink on hover */
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Winning message style */
+#winner-message {
+    font-size: 2.5em;
+    color: #4a40ff; /* Bright pink color for the winner message */
+    display: none; /* Initially hidden */
+    margin-top: 20px;
+}
+
+#winner-message.show {
+    display: block; /* Show when someone wins */
+    animation: blink 1s infinite; /* Blinking animation */
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
